@@ -1,23 +1,8 @@
 {` -*- narya-prog-args: ("-proofgeneral" "-hott") -*- `}
 
-def Σ (A : Type) (B : A → Type) : Type ≔ sig ( fst : A, snd : B fst )
-
-def isContr (A : Type) : Type ≔ sig (
-  center : A,
-  contract : (a : A) → Id A a center )
-
-def iscontr_idfrom (A : Type) (a0 : A) : isContr (Σ A (a1 ↦ Id A a0 a1))
-  ≔ (
-  center ≔ (a0, refl a0),
-  contract ≔ a1_a2 ↦
-    let a1 ≔ a1_a2 .fst in
-    let a2 ≔ a1_a2 .snd in
-    (refl ((z ↦ Id A z a0) : A → Type) a2 .trr (refl a0),
-     sym (refl ((z ↦ Id A z a0) : A → Type) a2 .liftr (refl a0))))
-
-def is11 (A B : Type) (R : A → B → Type) : Type ≔ sig (
-  contrr : (a : A) → isContr (Σ B (b ↦ R a b)),
-  contrl : (b : B) → isContr (Σ A (a ↦ R a b)) )
+import "sigma-types"
+import "contractible-types"
+import "1-1-correspondences"
 
 {` A 1-1 correspondence induces another one on identity types.  This is where the real work of univalence lies. `}
 def is11_Id (A0 A1 : Type) (A2 : Id Type A0 A1) (B0 B1 : Type)
