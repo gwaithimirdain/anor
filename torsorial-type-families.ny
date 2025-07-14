@@ -6,7 +6,8 @@ import "torsorial-type-families"
 
 def isTorsorial (A : Type) (B : A → Type) : Type ≔ isContr (Σ A B)
 
-def istorsorial_idfrom (A : Type) (a0 : A) : isTorsorial A (Id A a0)
+def istorsorial_idfrom (A : Type) (a0 : A)
+  : isTorsorial A (a1 ↦ Id A a0 a1)
   ≔ (
   center ≔ (a0, refl a0),
   contract ≔ a1_a2 ↦
