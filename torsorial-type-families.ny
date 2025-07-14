@@ -2,7 +2,6 @@
 
 import "contractible-types"
 import "sigma-types"
-import "torsorial-type-families"
 
 def isTorsorial (A : Type) (B : A → Type) : Type ≔ isContr (Σ A B)
 
