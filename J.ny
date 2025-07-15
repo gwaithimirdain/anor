@@ -66,6 +66,7 @@ def conn (A : Type) (x y : A) (p : Id A x y)
   : Sq A x y p y y (refl y) p (refl y)
   ≔ J A x (z q ↦ Sq A x z q z z (refl z) q (refl z)) (refl (refl x)) y p
 
+` A⁽ᵉᵉ⁾ z 
 def coconn (A : Type) (x y : A) (p : Id A x y)
   : Sq A x x (refl x) x y p (refl x) p
   ≔ J A x (z q ↦ Sq A x x (refl x) x z q (refl x) q) (refl (refl x)) y p

@@ -1,6 +1,3 @@
 {` -*- narya-prog-args: ("-proofgeneral" "-hott") -*- `}
 
-def ℕ : Type := data [
-| zero.
-| suc. (_ : ℕ)
-]
+def ℕ : Type ≔ data [ zero. | suc. (_ : ℕ) ]
