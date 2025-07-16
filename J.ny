@@ -1,10 +1,6 @@
 {` -*- narya-prog-args: ("-proofgeneral" "-hott") -*- `}
 
-import "connection-squares-of-identifications"
-import "groupoid-operations-on-identifications"
-import "iterated-identity-types"
 import "squares-of-identifications"
-import "transport-along-identifications"
 
 {` The Paulin-Möhring identity type eliminator, constructed as in cubical type theory. `}
 def J (A : Type) (a : A) (P : (y : A) → Id A a y → Type)
