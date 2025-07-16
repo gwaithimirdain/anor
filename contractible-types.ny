@@ -16,4 +16,7 @@ def allElementsEqual_isContr (A : Type) (H : isContr A) (x y : A)
 
 def isProp_isContr (A : Type) (H : isContr A) (x y : A)
   : isContr (Id A x y)
-  ≔ (center ≔ allElementsEqual_isContr A H x y, contraction ≔ ?)
+  ≔
+  let c ≔ H .center in
+  let γ ≔ H .contraction in
+  (center ≔ allElementsEqual_isContr A H x y, contraction ≔ a ↦ ?)
