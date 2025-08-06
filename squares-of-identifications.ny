@@ -9,6 +9,17 @@
       |         |
      x00 ----> x01.
           x02
+
+  This type can be defined in several ways, which are definitionally equal in Narya.
+
+  1. It can be defined as
+
+     refl (Id A) :
+       {x₀₀ x₀₁ : A} → Id A x₀₀ x₀₁ → {x₁₀ x₁₁ : A} → Id A x₁₀ x₁₁ →
+       Id A x₀₀ x₁₀ → Id A x₀₁ x₁₁ → Type
+
+  2. It can be defined as A⁽ᵉᵉ⁾, which reduces to the previous definition.
+
  `}
 
 def Sq (A : Type) (x00 x01 : A) (x02 : Id A x00 x01) (x10 x11 : A)
